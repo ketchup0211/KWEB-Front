@@ -1,27 +1,28 @@
 <!doctype html>
-<meta charset='utf-8'>
-<meta title='KWEB FRONTEND' contents='HW01'>
 
 <head>
+    <title>KWEB HW01</title>
+    <meta charset='utf-8'>
+    <meta title='KWEB FRONTEND' content='HW01'>
 </head>
 
 <body>
     <h2>KWEB Survey Page</h2>
     <img src="https://i.imgur.com/hSSFVSw.png" alt="KWEB 로고">
     <br>
-    <a href="https://kweboﬀicial.com/">KWEB Homepage</a>
+    <a href="https://kweboﬀicial.com/" target="_blank">KWEB Homepage</a>
     <form>
         <div>
-            <p><b>1. Write your name.</b></p>
+            <h4>1. Write your name.</h4>
             <input type="text" name="name">
         </div>
         <div>
-            <p><b>2. Write your student number.</b></p>
-            <input type="text" name="student number">
+            <h4>2. Write your student number.</h4>
+            <input type="text" name="student number" maxlength="10">
         </div>
         <div>
             <span>
-                <p><b>3. Select your member level.</b></p>
+                <h4>3. Select your member level.</h4>
                 <label><input type="radio" name="member level" value="Admin">Admin</label>
                 <label><input type="radio" name="member level" value="Intern">Intern</label>
                 <label><input type="radio" name="member level" value="Qualified">Qualified</label>
@@ -29,17 +30,17 @@
         </div>
         <div>
             <span>
-                <p><b>4. Select all fields you are interested in.</b></p>
-                <label><input type="checkbox" name="interest" value="Front-end">Front-end</label>
-                <label><input type="checkbox" name="interest" value="Back-end">Back-end</label>
-                <label><input type="checkbox" name="interest" value="Web crawling">Web crawling</label>
-                <label><input type="checkbox" name="interest" value="Web security">Web security</label>
-                <label><input type="checkbox" name="interest" value="Extra">Extra
+                <h4>4. Select all fields you are interested in.</h4>
+                <label><input type="checkbox" name="Front-end">Front-end</label>
+                <label><input type="checkbox" name="Back-end">Back-end</label>
+                <label><input type="checkbox" name="Web crawling">Web crawling</label>
+                <label><input type="checkbox" name="Web security">Web security</label>
+                <label><input type="checkbox" name="Extra">Extra
                     <input type="text" name="Extra"></label>
             </span>
         </div>
         <div>
-            <p><b>5. Give us your overall evaluation and feedback about the previous study.</b></p>
+            <h4>5. Give us your overall evaluation and feedback about the previous study.</h4>
             <span>
                 <textarea cols="70" rows="20" name="feedback"></textarea>
             </span>
