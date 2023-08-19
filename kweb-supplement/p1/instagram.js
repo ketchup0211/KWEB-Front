@@ -77,11 +77,19 @@ function openKweb() {
   open('https://kwebofficial.com', 'KWEB');
 }
 
+function _getKeyByValue(obj, value) {
+  return Object.keys(obj).find(key => obj[key] === value);
+}
 //  # 1.3 좋아요 많은 순으로 포스트 정렬하는 함수 -> TODO : 어떻게 비교할 것인가?
 function sortPost() {
   const posts = document.querySelectorAll('#posts div');
-  
-  // like 작은 순으로 인덱스 구해서, 반복!
+
+  // TODO : like 작은 순으로 인덱스 구해서 query sort 하는 알고리즘 만들기!
+  /*orderArr.forEach((idx) => {
+    let content = posts[idx];
+    let parent = content.parentNode;
+    parent.insertBefore(content, parent.firstChild);
+  })*/
   let content = posts[0];
   let parent = content.parentNode;
   parent.insertBefore(content, parent.firstChild);
