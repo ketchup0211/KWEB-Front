@@ -47,29 +47,54 @@ const POSTS = [
 function createPost(post) {
   const postElement = document.createElement("div");
 
-  /**
-   * # 1.1 createPost 함수 구현
-   *
-   *
-   *
-   *
-   */
+  //# 1.1 createPost 함수 구현
+  const username = document.createElement('p');
+  username.id = 'username';
+  username.innerText = post.username;
+  postElement.appendChild(username);
+
+  const image = document.createElement('img');
+  image.id = 'img';
+  image.alt = 'post img';
+  image.src = post.image;
+  postElement.appendChild(image);
+
+  const likes = document.createElement('p');
+  likes.id = 'likes';
+  likes.innerText = post.likes;
+  postElement.appendChild(likes);
+
+  const description = document.createElement('p');
+  description.id = 'description';
+  description.innerText = post.description;
+  postElement.appendChild(description);
+
   return postElement;
+}
+
+//  # 1.3 KWEB 홈페이지로 이동하는 함수
+function openKweb() {
+  open('https://kwebofficial.com', 'KWEB');
+}
+
+//  # 1.3 좋아요 많은 순으로 포스트 정렬하는 함수
+function sortPost() {
+//method 1. 데이터를 좋아요 많은 순으로 정렬하고 이에 대해 createPost
+//
 }
 
 // main 실행 함수
 function main() {
+
+  document.getElementById("kweb-homepage").addEventListener('click', openKweb);
   // 게시물 엘리먼트를 넣어야 하는 곳
   const postsContainer = document.getElementById("posts");
 
-  /**
-   * # 1.2 createPost로 만든 post를 postsContainer에 하나씩 넣는 코드
-   *
-   *
-   *
-   *
-   *
-   */
+  // # 1.2 createPost로 만든 post를 postsContainer에 하나씩 넣는 코드
+  POSTS.forEach((element)=>{
+    let postElement = createPost(element);
+    postsContainer.appendChild(postElement);
+  })
 }
 
 main();
