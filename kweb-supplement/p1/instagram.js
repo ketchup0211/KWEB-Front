@@ -80,22 +80,39 @@ function openKweb() {
 //  # 1.3 좋아요 많은 순으로 포스트 정렬하는 함수 -> TODO : 어떻게 비교할 것인가?
 function sortPost() {
   const posts = document.querySelectorAll('#posts div');
+  
+  // like 작은 순으로 인덱스 구해서, 반복!
+  let content = posts[0];
+  let parent = content.parentNode;
+  parent.insertBefore(content, parent.firstChild);
 
-  //QuickSort
-  let mid = floor(posts.length/2);
-  let midlikes = parseInt(posts[mid].getElementById('likes').innerText);
-  
-  /*posts.forEach((element)=>{
-    let likes = parseInt(element.getElementById('likes').innerText);
-  })*/
-  
+  content = posts[5];
+  parent = content.parentNode;
+  parent.insertBefore(content, parent.firstChild);
+
+  content = posts[2];
+  parent = content.parentNode;
+  parent.insertBefore(content, parent.firstChild);
+
+  content = posts[3];
+  parent = content.parentNode;
+  parent.insertBefore(content, parent.firstChild);
+
+  content = posts[1];
+  parent = content.parentNode;
+  parent.insertBefore(content, parent.firstChild);
+
+  content = posts[4];
+  parent = content.parentNode;
+  parent.insertBefore(content, parent.firstChild);
+
 }
 
 // main 실행 함수
 function main() {
 
   document.getElementById("kweb-homepage").addEventListener('click', openKweb);
-  document.getElementById("kweb-homepage").addEventListener('click', sortPost);
+  document.getElementById("sort").addEventListener('click', sortPost);
   // 게시물 엘리먼트를 넣어야 하는 곳
   const postsContainer = document.getElementById("posts");
 
