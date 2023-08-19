@@ -77,16 +77,25 @@ function openKweb() {
   open('https://kwebofficial.com', 'KWEB');
 }
 
-//  # 1.3 좋아요 많은 순으로 포스트 정렬하는 함수
+//  # 1.3 좋아요 많은 순으로 포스트 정렬하는 함수 -> TODO : 어떻게 비교할 것인가?
 function sortPost() {
-//method 1. 데이터를 좋아요 많은 순으로 정렬하고 이에 대해 createPost
-//
+  const posts = document.querySelectorAll('#posts div');
+
+  //QuickSort
+  let mid = floor(posts.length/2);
+  let midlikes = parseInt(posts[mid].getElementById('likes').innerText);
+  
+  /*posts.forEach((element)=>{
+    let likes = parseInt(element.getElementById('likes').innerText);
+  })*/
+  
 }
 
 // main 실행 함수
 function main() {
 
   document.getElementById("kweb-homepage").addEventListener('click', openKweb);
+  document.getElementById("kweb-homepage").addEventListener('click', sortPost);
   // 게시물 엘리먼트를 넣어야 하는 곳
   const postsContainer = document.getElementById("posts");
 
