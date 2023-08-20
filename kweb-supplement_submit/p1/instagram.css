@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+}
+
+/*# 1.4 TOP버튼 구현*/
+#top-button{
+  text-align: center;
+  font-weight: bold;
+  color : #fafafa;
+  background-color: indianred;
+
+  width: 40px;
+  height: 20px;
+
+  border-radius: 100%;
+  padding : 20px 10px;
+  margin : 10px;
+
+  position: fixed;
+  right : 50px;
+  bottom : 20px; 
+}
