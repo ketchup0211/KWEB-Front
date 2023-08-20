@@ -49,23 +49,23 @@ function createPost(post) {
 
   //# 1.1 createPost 함수 구현
   const username = document.createElement('p');
-  username.id = 'username';
+  username.class = 'username';
   username.innerText = post.username;
   postElement.appendChild(username);
 
   const image = document.createElement('img');
-  image.id = 'img';
+  image.class = 'img';
   image.alt = 'post img';
   image.src = post.image;
   postElement.appendChild(image);
 
   const likes = document.createElement('p');
-  likes.id = 'likes';
+  likes.class = 'likes';
   likes.innerText = post.likes;
   postElement.appendChild(likes);
 
   const description = document.createElement('p');
-  description.id = 'description';
+  description.class = 'description';
   description.innerText = post.description;
   postElement.appendChild(description);
 
@@ -83,36 +83,25 @@ function _getKeyByValue(obj, value) {
 //  # 1.3 좋아요 많은 순으로 포스트 정렬하는 함수 -> TODO : 어떻게 비교할 것인가?
 function sortPost() {
   const posts = document.querySelectorAll('#posts div');
+  const postsArr = Array.from(posts);
+  const idxArr = [];
+  // TODO : like 작은 순으로 인덱스 구해서 query sort 하는 알고리즘 만들기; 수가 작은  인덱스부터 반환
+  postsArr.forEach((post)=>{
+    console.log(post);
+    let postLikes = parseInt(post.getElementById('likes').innerText);
+    idxArr.push(postLikes);
+  })
+  console.log(idxArr);
+  for (let i=0; i<(POSTS.length);i++)
+  {  
+    let minVal = Math.min.apply(null, idxArr);
+    let idx = idxArr.indexOf(minVal);
 
-  // TODO : like 작은 순으로 인덱스 구해서 query sort 하는 알고리즘 만들기!
-  /*orderArr.forEach((idx) => {
     let content = posts[idx];
     let parent = content.parentNode;
     parent.insertBefore(content, parent.firstChild);
-  })*/
-  let content = posts[0];
-  let parent = content.parentNode;
-  parent.insertBefore(content, parent.firstChild);
-
-  content = posts[5];
-  parent = content.parentNode;
-  parent.insertBefore(content, parent.firstChild);
-
-  content = posts[2];
-  parent = content.parentNode;
-  parent.insertBefore(content, parent.firstChild);
-
-  content = posts[3];
-  parent = content.parentNode;
-  parent.insertBefore(content, parent.firstChild);
-
-  content = posts[1];
-  parent = content.parentNode;
-  parent.insertBefore(content, parent.firstChild);
-
-  content = posts[4];
-  parent = content.parentNode;
-  parent.insertBefore(content, parent.firstChild);
+    idxArr.pop(minVal);
+  }
 
 }
 
