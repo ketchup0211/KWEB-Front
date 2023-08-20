@@ -83,15 +83,14 @@ function _getKeyByValue(obj, value) {
 //  # 1.3 좋아요 많은 순으로 포스트 정렬하는 함수 -> TODO : 어떻게 비교할 것인가?
 function sortPost() {
   const posts = document.querySelectorAll('#posts div');
-  const postsArr = Array.from(posts);
+  console.log(posts);
   const idxArr = [];
-  // TODO : like 작은 순으로 인덱스 구해서 query sort 하는 알고리즘 만들기; 수가 작은  인덱스부터 반환
-  postsArr.forEach((post)=>{
-    console.log(post);
-    let postLikes = parseInt(post.getElementById('likes').innerText);
+  
+  posts.forEach((post)=>{
+    let postLikes = parseInt(post.querySelector('.likes').innerText);
     idxArr.push(postLikes);
   })
-  console.log(idxArr);
+
   for (let i=0; i<(POSTS.length);i++)
   {  
     let minVal = Math.min.apply(null, idxArr);
@@ -99,8 +98,10 @@ function sortPost() {
 
     let content = posts[idx];
     let parent = content.parentNode;
+    console.log(parent);
     parent.insertBefore(content, parent.firstChild);
-    idxArr.pop(minVal);
+
+    idxArr.splice(idx, 1);
   }
 
 }
