@@ -81,31 +81,13 @@ function _getKeyByValue(obj, value) {
   return Object.keys(obj).find(key => obj[key] === value);
 }
 //  # 1.3 좋아요 많은 순으로 포스트 정렬하는 함수 -> TODO : 어떻게 비교할 것인가?
-function sortPost() {
-  const posts = document.querySelectorAll('#posts div');
-
-  posts.forEach((post)=>{
-
-    const content = post;
-    const previousPost = post.previousElementSibling;
-    if(previousPost)
-    {
-      const previousPostLikes = parseInt(previousPost.querySelector('.likes').innerText);
-      const currentPostLikes = parseInt(content.querySelector('.likes').innerText);
-      if(previousPostLikes < currentPostLikes)
-      {
-        const parent = content.parentNode;
-        parent.insertBefore(content, content.previousElementSibling);
-      }
-  }
-  });
-}
+//function sortPost() {}
 
 // main 실행 함수
 function main() {
 
   document.getElementById("kweb-homepage").addEventListener('click', openKweb);
-  document.getElementById("sort").addEventListener('click', sortPost);
+  //document.getElementById("sort").addEventListener('click', sortPost);
   // 게시물 엘리먼트를 넣어야 하는 곳
   const postsContainer = document.getElementById("posts");
 
