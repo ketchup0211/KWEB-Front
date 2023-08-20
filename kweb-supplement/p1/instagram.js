@@ -49,23 +49,23 @@ function createPost(post) {
 
   //# 1.1 createPost 함수 구현
   const username = document.createElement('p');
-  username.class = 'username';
+  username.classList.add('username');
   username.innerText = post.username;
   postElement.appendChild(username);
 
   const image = document.createElement('img');
-  image.class = 'img';
+  image.classList.add('img');
   image.alt = 'post img';
   image.src = post.image;
   postElement.appendChild(image);
 
   const likes = document.createElement('p');
-  likes.class = 'likes';
+  likes.classList.add('likes');
   likes.innerText = post.likes;
   postElement.appendChild(likes);
 
   const description = document.createElement('p');
-  description.class = 'description';
+  description.classList.add('description');
   description.innerText = post.description;
   postElement.appendChild(description);
 
