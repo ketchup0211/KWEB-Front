@@ -48,14 +48,20 @@ function createPost(post) {
   const postElement = document.createElement("div");
 
   /* # 1.1 createPost 함수 구현*/
-  const username = document.createElement('p');
-  username.classList.add('username');
-  username.innerText = post.username;
-  postElement.appendChild(username);
+  postElement.classList.add('post');
+
+  const userProfile = document.createElement('div');
+  userProfile.classList.add('userProfile');
+  postElement.appendChild(userProfile);
+
+  const userName = document.createElement('p');
+  userName.classList.add('userName');
+  userName.innerText = post.username;
+  userProfile.appendChild(userName);
 
   const image = document.createElement('img');
   image.classList.add('img');
-  image.alt = 'post img';
+  image.alt = 'post-img';
   image.src = post.image;
   postElement.appendChild(image);
 
@@ -80,6 +86,16 @@ function openKweb() {
 /*# 1.3 상단 네비게이션 바 */
 //function sortPost() {}
 
+/*# 1.4 TOP버튼 구현*/
+function moveTop() {
+  const topPosition = document.getElementById("header").offsetTop;
+  scrollTo({
+    left : 0,
+    top : topPosition,
+    behavior : "smooth",
+  })
+}
+
 // main 실행 함수
 function main() {
   // 게시물 엘리먼트를 넣어야 하는 곳
@@ -90,6 +106,7 @@ function main() {
   //document.getElementById("sort").addEventListener('click', sortPost);
 
   /*# 1.4 TOP버튼 구현*/
+  document.getElementById("top-button").addEventListener('click', moveTop);
 
   /*# 1.2 createPost로 만든 post를 postsContainer에 하나씩 넣는 코드*/
   POSTS.forEach((element)=>{

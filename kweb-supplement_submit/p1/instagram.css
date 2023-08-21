@@ -3,12 +3,98 @@ body {
   background-color: #fafafa;
 }
 
+#header{
+  background-color: white;
+  height: 70px;
+
+  padding: 10px;
+  margin: 10px 5px 20px;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/*# 1.2 createPost*/
+#feed-container{
+  background-color: white;
+  width : 600px;
+
+  border : 1px solid grey;
+  padding: 10px 15px;
+  margin :0 auto;
+}
+
+/*야매로 지웠음.. 코드 수정 필요*/
+#posts :first-child{
+  border-top : transparent;
+}
+
+.post{
+  text-align: left;
+
+  border-top : 1px solid grey;
+  position: relative;
+}
+
+.img{
+  width : 95%;
+  text-align: justify;
+  position: relative;
+  margin : 5px 10px;
+}
+
+.userProfile{
+  background-color: #dbdbdb;
+  width : 20px;
+  height : 20px;
+
+  border-radius: 100%;
+  padding : 10px;
+  margin : 10px;
+
+  display : inline-block;
+  position : relative;
+}
+
+.userName{
+  text-align: left;
+  font-weight: bold;
+
+  width : 200px;
+  height : 20px;
+
+  padding : 5px;
+  margin : 5px;
+  
+  display: inline-block;
+  position : absolute;
+  left : 40px;
+  bottom: 1px;
+}
+/*# 1.3 네이게이션 바 구현*/
+#menu{
+  position: absolute;
+  right : 10px;
+}
+
+.btn{
+  border-style: none;
+  background-color: transparent;
+
+  font-size: large;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px;
+  margin:5px;
+}
+
 /*# 1.4 TOP버튼 구현*/
 #top-button{
   text-align: center;
   font-weight: bold;
   color : #fafafa;
-  background-color: indianred;
+  background-color: #fb3958;
 
   width: 40px;
   height: 20px;
