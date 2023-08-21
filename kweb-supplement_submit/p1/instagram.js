@@ -65,6 +65,11 @@ function createPost(post) {
   image.src = post.image;
   postElement.appendChild(image);
 
+  const likeImg = document.createElement('p');
+  likeImg.classList.add('likeImg');
+  likeImg.innerText = '♥️';
+  postElement.appendChild(likeImg);
+
   const likes = document.createElement('p');
   likes.classList.add('likes');
   likes.innerText = post.likes;
