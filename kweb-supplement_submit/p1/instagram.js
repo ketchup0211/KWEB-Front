@@ -100,7 +100,25 @@ function openKweb() {
 }
 
 /*# 1.3 상단 네비게이션 바 */
-//function sortPost() {}
+function sortPost() {
+  const postsParent = document.getElementById('posts');
+  const posts = document.getElementsByClassName('post');
+
+  let postsLikes=[];
+  for(let i=0; i<posts.length ; i++){
+    postsLikes[i] = posts[i].querySelector('.likes').innerText;
+  }
+  postsLikes.sort();
+
+  for(let i=0; i<postsLikes.length ; i++){
+    for(let j=0; j<posts.length;j++){
+      if(postsLikes[i] === posts[j].querySelector('.likes').innerText){
+        postsParent.insertBefore(posts[j], postsParent.firstChild);
+      }
+    } 
+  }
+    //innerText로 like 구해서 정렬해서 해당 숫자에 해당하는 쿼리 순으로 움직이기
+}
 
 /*# 1.4 TOP버튼 구현*/
 function moveTop() {
@@ -119,7 +137,11 @@ function main() {
 
   /*# 1.3 상단 네비게이션 바 */
   document.getElementById("kweb-homepage").addEventListener('click', openKweb);
-  //document.getElementById("sort").addEventListener('click', sortPost);
+  document.getElementById("sort").addEventListener('click', sortPost);
+  const logo = document.getElementById('logo');
+  const logoImg = document.createElement('img');
+  logoImg.setAttribute('src', './img/logo.png');
+  logo.appendChild(logoImg);
 
   /*# 1.4 TOP버튼 구현*/
   document.getElementById("top-button").addEventListener('click', moveTop);
