@@ -50,14 +50,19 @@ function createPost(post) {
   /* # 1.1 createPost 함수 구현*/
   postElement.classList.add('post');
 
+  const profile = document.createElement('div');
+  profile.classList.add('profile');
+
   const userProfile = document.createElement('div');
   userProfile.classList.add('userProfile');
-  postElement.appendChild(userProfile);
+  profile.appendChild(userProfile);
 
   const userName = document.createElement('p');
   userName.classList.add('userName');
   userName.innerText = post.username;
-  userProfile.appendChild(userName);
+  profile.appendChild(userName);
+
+  postElement.appendChild(profile);
 
   const image = document.createElement('img');
   image.classList.add('img');
@@ -65,15 +70,21 @@ function createPost(post) {
   image.src = post.image;
   postElement.appendChild(image);
 
-  const likeImg = document.createElement('p');
+  const like = document.createElement('div');
+  like.classList.add('like');
+
+  const likeImg = document.createElement('img');
   likeImg.classList.add('likeImg');
-  likeImg.innerText = '♥️';
-  postElement.appendChild(likeImg);
+  likeImg.setAttribute('src', './img/heart.png');
+  likeImg.setAttribute('alt', 'like');
+  like.appendChild(likeImg);
 
   const likes = document.createElement('p');
   likes.classList.add('likes');
   likes.innerText = post.likes;
-  postElement.appendChild(likes);
+  like.appendChild(likes);
+
+  postElement.appendChild(like);
 
   const description = document.createElement('p');
   description.classList.add('description');
