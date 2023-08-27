@@ -1,0 +1,60 @@
+body{
+    text-align: center;
+}
+
+#main-title{
+    margin-top: 19vh;
+    font-size: 85px;
+}
+
+#main-title span:nth-child(1){
+    color: rgb(66,133,244)
+}
+
+#main-title span:nth-child(2){
+    color: rgb(234,67,53)
+}
+
+#main-title span:nth-child(3){
+    color: rgb(251,188,5)
+}
+
+#main-title span:nth-child(4){
+    color: rgb(66,133,244)
+}
+
+#main-title span:nth-child(5){
+    color: rgb(52,168,83)
+}
+
+#main-title span:nth-child(6){
+    color: rgb(234,67,53)
+}
+
+#main-title span:nth-child(7){
+    color: rgb(66,133,244)
+}
+
+.search-bar{
+    width : 582px;
+    height: 46px;
+    border : 1px;
+}
+
+.main-button{
+    width :460px;
+    height : 70px;
+    text-align: center;
+    padding-top :16px;
+}
+
+.main-button button{
+    border-style:none;
+    background-color: rgb(245,245,245);
+    color:rgb(95,99,103);
+    font-size: 13px;
+
+    border-radius: 4px;
+    padding : 8px 13px;
+    margin : 0px 4px;
+}
