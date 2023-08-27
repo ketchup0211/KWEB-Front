@@ -94,12 +94,10 @@ function createPost(post) {
   return postElement;
 }
 
-/*# 1.3 상단 네비게이션 바 */
 function openKweb() {
   open('https://kwebofficial.com', 'KWEB');
 }
 
-/*# 1.3 상단 네비게이션 바 */
 function sortPost() {
   const postsParent = document.getElementById('posts');
   const posts = document.getElementsByClassName('post');
@@ -117,10 +115,8 @@ function sortPost() {
       }
     } 
   }
-    //innerText로 like 구해서 정렬해서 해당 숫자에 해당하는 쿼리 순으로 움직이기
 }
 
-/*# 1.4 TOP버튼 구현*/
 function moveTop() {
   const topPosition = document.getElementById("header").offsetTop;
   scrollTo({
@@ -135,18 +131,15 @@ function main() {
   // 게시물 엘리먼트를 넣어야 하는 곳
   const postsContainer = document.getElementById("posts");
 
-  /*# 1.3 상단 네비게이션 바 */
   document.getElementById("kweb-homepage").addEventListener('click', openKweb);
   document.getElementById("sort").addEventListener('click', sortPost);
+  document.getElementById("top-button").addEventListener('click', moveTop);
+
   const logo = document.getElementById('logo');
   const logoImg = document.createElement('img');
   logoImg.setAttribute('src', './img/logo.png');
   logo.appendChild(logoImg);
 
-  /*# 1.4 TOP버튼 구현*/
-  document.getElementById("top-button").addEventListener('click', moveTop);
-
-  /*# 1.2 createPost로 만든 post를 postsContainer에 하나씩 넣는 코드*/
   POSTS.forEach((element)=>{
     let postElement = createPost(element);
     postsContainer.appendChild(postElement);
